@@ -86,7 +86,8 @@ public class CRSS
         }
     }
     
-    public static void addRoom() {
+    public static void addRoom() 
+    {
         while (true) {
             System.out.print("How many rooms would you like to add? ");
             int numRoom = input.nextInt();
@@ -110,7 +111,8 @@ public class CRSS
         }
     }
     
-    public static void addCourse() {
+    public static void addCourse() 
+    {
         while (true) {
             Course course = new Course();
             
@@ -197,7 +199,8 @@ public class CRSS
         }
     }
     
-    public static void addStudent() {
+    public static void addStudent() 
+    {
         while (true) {
             Student student = new Student();
             
@@ -208,7 +211,7 @@ public class CRSS
             String studentL = input.next();
             
             // check if student is in list already
-            boolean isThere;
+            boolean isThere = false;
             
             for (Student i : stud) {
                 if (i.getFirst().equals(studentF)) {
@@ -246,43 +249,54 @@ public class CRSS
         }
     }
     
-    public static void delRoom() {
+    public static void delRoom() 
+    {
         while (true) {
+            
+            boolean canDel = false;
+            
             // displays rooms with no courses
             System.out.println("Displaying rooms that can be deleted: "); 
             for (Room i : rm) {
                 boolean isFree = i.getCourse().isEmpty();
-                if (isFree == true)
-                    System.out.println(i.getNum());
-            }
-            
-            
-            System.out.print("Enter a room number to be deleted: ");
-            int roomNum = input.nextInt();
                 
-            while (true) {
-                try {
-                    roomNum = input.nextInt();
-                } catch (Exception E) {
-                    if (roomNum != input.nextInt()) {
-                        System.out.print("Not a room number");
-                        System.out.print("Enter a room number to be deleted: ");
-                        roomNum = input.nextInt();
-                    }
-                    else {
-                        roomNum = input.nextInt();
-                        break;
-                    }                
+                if (isFree == true) {
+                    System.out.println(i.getNum());
+                    canDel = true;
                 }
+                else if (isFree == false)
+                    System.out.println("Nothing to be deleted");
+                
             }
             
-            for (Room i : rm) {
-                boolean isFree = i.getCourse().isEmpty();
-                if (isFree == true) {
-                    if (roomNum == i.getNum()) {
-                        rm.remove(i);
-                        System.out.println("You've removed " + roomNum);
-                        break;
+            if (canDel == true) {
+                System.out.print("Enter a room number to be deleted: ");
+                int roomNum = input.nextInt();
+                
+                while (true) {
+                    try {
+                        roomNum = input.nextInt();
+                    } catch (Exception E) {
+                        if (roomNum != input.nextInt()) {
+                            System.out.print("Not a room number");
+                            System.out.print("Enter a room number to be deleted: ");
+                            roomNum = input.nextInt();
+                        }
+                        else {
+                            roomNum = input.nextInt();
+                            break;
+                        }                
+                    }
+                }
+
+                for (Room i : rm) {
+                    boolean isFree = i.getCourse().isEmpty();
+                    if (isFree == true) {
+                        if (roomNum == i.getNum()) {
+                            rm.remove(i);
+                            System.out.println("You've removed " + roomNum);
+                            break;
+                        }
                     }
                 }
             }
@@ -293,26 +307,40 @@ public class CRSS
         }
     }
     
-    public static void delCourse() {
+    public static void delCourse() 
+    {
         while (true) {
+            
+            boolean canDel = false;
+            
             // present courses with no students
             System.out.println("Courses that can be deleted: ");
             for (Course i : crs) {
-                if (i.isEmpty())
-                    System.out.println(i.getCName());
+                if ( i.isEmpty() ) {
+                    System.out.println( i.getCName() );
+                    canDel = true;
+                }
+                else if ( !i.isEmpty() )
+                    System.out.println("Nothing to be deleted.");
+                
             }
             
-            System.out.print("Choose a course to be deleted: ");
-            String courseName = input.next();
-            if (!courseName.equals(input.next()))
-                throw new IllegalArgumentException("Wrong value for name!");
-            for (Course i :crs) {
-                if (i.isEmpty() == true) {
-                    if (courseName.equals(i.getCName())) {
-                        crs.remove(i);
-                        break;
+            // if something can be deleted prompt the user
+            if (canDel == true) 
+            {
+                System.out.print("Choose a course to be deleted: ");
+                String courseName = input.next();
+                if (!courseName.equals(input.next()))
+                    throw new IllegalArgumentException("Wrong value for name!");
+                for (Course i :crs) {
+                    if (i.isEmpty() == true) {
+                        if (courseName.equals(i.getCName())) {
+                            crs.remove(i);
+                            break;
+                        }
                     }
                 }
+                
             }
             
             System.out.print("Exit(0) or Delete some more(anything): ");
@@ -321,27 +349,40 @@ public class CRSS
         }
     }
     
-    public static void delStudent() {
+    public static void delStudent() 
+    {
         while (true) {
+
+            boolean canDel = false;
+            
             // show students with no courses
             System.out.println("Students that can be deleted: ");
             for (Student i : stud) {
-                if (i.isEmpty() == true)
+                if ( i.isEmpty() ) {
                     System.out.println(i.getFirst() + i.getLast());
+                    canDel = true;
+                }
+                else if ( !i.isEmpty() )
+                    System.out.println("Nothing to be deleted.");
             }
             
-            System.out.print("Please enter a first name to be deleted: ");
-            String studentF = input.next();
-            System.out.print("Please enter a last name to be deleted: ");
-            String studentL = input.next();
-            
-            for (Student i : stud) {
-                if (i.isEmpty()) {
-                    if (studentF.equals(i.getFirst()) && studentL.equals(i.getLast())) {
-                        stud.remove(i);
-                        break;
+            // if can delete then present prompt
+            if (canDel == true) 
+            {
+                System.out.print("Please enter a first name to be deleted: ");
+                String studentF = input.next();
+                System.out.print("Please enter a last name to be deleted: ");
+                String studentL = input.next();
+
+                for (Student i : stud) {
+                    if ( i.isEmpty() ) {
+                        if (studentF.equals(i.getFirst()) && studentL.equals(i.getLast())) {
+                            stud.remove(i);
+                            break;
+                        }
                     }
                 }
+                
             }
             
             System.out.print("Exit(0) or Delete some more(anything): ");
@@ -350,7 +391,8 @@ public class CRSS
         }
     }
     
-    public static void display() {
+    public static void display() 
+    {
         while (true) {
             System.out.print("Display Course(0), Student Schedule(1), Rooms(2): ");
             int choice = input.nextInt();
