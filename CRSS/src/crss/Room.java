@@ -10,6 +10,10 @@ public class Room
 
     // class constructor
     public Room() {}
+
+    public Room(int rmNum) {
+        this.rmNum = rmNum;
+    }
     
     // getters and setters
     public void setNum(int rmNum) {

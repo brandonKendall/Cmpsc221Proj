@@ -11,13 +11,21 @@ public class Course {
     private Student student;
     private ArrayList<Student> stud = new ArrayList<>();
     private Room room;
-    // class constructor
-    public Course() {}
 
+    public Course() {}
+    
+    // class constructor
     public Course(String crsName, int crsTime, Room room) {
         this.crsName = crsName;
         this.crsTm = crsTm;
         this.room = room;
+    }
+
+    public Course(String crsName, int crsTime, Room room, ArrayList<Student> stud) {
+        this.crsName = crsName;
+        this.crsTm = crsTm;
+        this.room = room;
+        this.stud = stud;
     }
     
     // getters and setters
