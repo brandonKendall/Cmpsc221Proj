@@ -1,5 +1,6 @@
-package crss;
+package phase2;
 
+import crss.*;
 import java.util.ArrayList;
 
 public class Student {
@@ -8,10 +9,6 @@ public class Student {
     private ArrayList<Course> course = new ArrayList<>();
     private Course crs;
     // class constructor
-    public Student() {
-        course = new ArrayList<>();
-    }
-
     public Student(String stuFirst, String stuLast, String stuPhone) {
         course = new ArrayList<>();
         this.stuFirst = stuFirst;

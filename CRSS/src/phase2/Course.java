@@ -1,24 +1,19 @@
-package crss;
+package phase2;
 
+import crss.*;
 import java.util.ArrayList;
 
 public class Course {
     // instance vars
     private String crsName;
     private int crsTm;
-    private int rm;
+    
     // these are for storing the instance of students in the course
+    private int room;
     private Student student;
     private ArrayList<Student> stud = new ArrayList<>();
-    private Room room;
     // class constructor
     public Course() {}
-
-    public Course(String crsName, int crsTime, Room room) {
-        this.crsName = crsName;
-        this.crsTm = crsTm;
-        this.room = room;
-    }
     
     // getters and setters
     public void setCName(String crsName) {
@@ -31,8 +26,8 @@ public class Course {
         }
     }
     
-    public void setCrm(int rm) {
-        this.rm = rm;
+    public void setCrm(int room) {
+        this.room = room;
     }
     
     public void setStu(Student student) {
@@ -51,7 +46,7 @@ public class Course {
         return crsTm;
     }
     
-    public Room getCrm() {
+    public int getCrm() {
         return room;
     }
     
