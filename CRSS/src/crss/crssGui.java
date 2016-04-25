@@ -67,7 +67,7 @@ public class crssGui extends javax.swing.JFrame {
         addCrsName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         addCrsTime = new javax.swing.JComboBox<String>();
-        jButton1 = new javax.swing.JButton();
+        addCrsBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         addCrsStuBtn = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
@@ -76,17 +76,13 @@ public class crssGui extends javax.swing.JFrame {
         addCrsList = new javax.swing.JTextArea();
         jLabel24 = new javax.swing.JLabel();
         addCrsRmList = new javax.swing.JComboBox<String>();
-        addCrsRefresh = new javax.swing.JToggleButton();
         addRmPane = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         addRmNum = new javax.swing.JTextField();
         addRmBtn = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        addRmCrsBtn = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         addRmList = new javax.swing.JTextArea();
-        addRmCrsList = new javax.swing.JComboBox();
         mainMenuBtn1 = new javax.swing.JButton();
         delPanel = new javax.swing.JPanel();
         title2 = new javax.swing.JLabel();
@@ -97,35 +93,33 @@ public class crssGui extends javax.swing.JFrame {
         delStuffPane = new javax.swing.JLayeredPane();
         delStuPane = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        delStuList = new javax.swing.JList<String>();
         delStuBtn = new javax.swing.JButton();
         delStuOutputBtn = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        delStuList = new javax.swing.JTextArea();
+        delStuDropList = new javax.swing.JComboBox();
+        jLabel17 = new javax.swing.JLabel();
         delCrsPane = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        delCrsList = new javax.swing.JList<String>();
         delCrsBtn = new javax.swing.JButton();
         delCrsOutputBtn = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        delCrsList = new javax.swing.JTextArea();
+        jLabel25 = new javax.swing.JLabel();
+        delCrsDropList = new javax.swing.JComboBox();
         delRmPane = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        delRmList = new javax.swing.JList<String>();
         delRmBtn = new javax.swing.JButton();
         delRmOutputBtn = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        delRmList = new javax.swing.JTextArea();
+        jLabel26 = new javax.swing.JLabel();
+        delRmDropList = new javax.swing.JComboBox();
         dsplyPane = new javax.swing.JPanel();
         dsplyStuBtn = new javax.swing.JButton();
         dsplyCrsBtn = new javax.swing.JButton();
         dsplyRmBtn = new javax.swing.JButton();
         dsplySelectMenu = new javax.swing.JLayeredPane();
-        stuDisplay = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        dsplyFirstName = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        dsplyLastName = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        dsplyPhoneNum = new javax.swing.JTextField();
-        dsplyStuEnter = new javax.swing.JButton();
         rmDisplay = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         dsplyRmNum = new javax.swing.JTextField();
@@ -136,12 +130,16 @@ public class crssGui extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         dsplyCrseTime = new javax.swing.JComboBox<String>();
+        stuDisplay = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        dsplyStuBtn2 = new javax.swing.JButton();
         dsplyListPane = new javax.swing.JLayeredPane();
         dsplyStuListPane = new javax.swing.JPanel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        dsplyStuList = new javax.swing.JList<String>();
         dsplyStuOutputBtn = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        dsplyStuList = new javax.swing.JTextArea();
         dsplyCrsListPane = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         dsplyCrseList = new javax.swing.JList<String>();
@@ -340,15 +338,15 @@ public class crssGui extends javax.swing.JFrame {
 
         addCrsTime.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "None", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm" }));
 
-        jButton1.setText("Add Course");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        addCrsBtn.setText("Add Course");
+        addCrsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton1MousePressed(evt);
+                addCrsBtnMousePressed(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addCrsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addCrsBtnActionPerformed(evt);
             }
         });
 
@@ -374,13 +372,6 @@ public class crssGui extends javax.swing.JFrame {
 
         addCrsRmList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "None" }));
 
-        addCrsRefresh.setText("Refresh");
-        addCrsRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                addCrsRefreshMousePressed(evt);
-            }
-        });
-
         javax.swing.GroupLayout addCrsPaneLayout = new javax.swing.GroupLayout(addCrsPane);
         addCrsPane.setLayout(addCrsPaneLayout);
         addCrsPaneLayout.setHorizontalGroup(
@@ -390,13 +381,10 @@ public class crssGui extends javax.swing.JFrame {
                 .addGroup(addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addCrsPaneLayout.createSequentialGroup()
                         .addGroup(addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(addCrsPaneLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addCrsRefresh))
+                            .addComponent(jLabel4)
                             .addComponent(jLabel19)
                             .addComponent(addCrsStuBtn))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE))
                     .addGroup(addCrsPaneLayout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE))
@@ -404,7 +392,7 @@ public class crssGui extends javax.swing.JFrame {
                         .addGroup(addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(addCrsRmList, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addCrsPaneLayout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(addCrsBtn)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(addCrsName)
                             .addComponent(addCrsTime, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -419,13 +407,10 @@ public class crssGui extends javax.swing.JFrame {
         addCrsPaneLayout.setVerticalGroup(
             addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addCrsPaneLayout.createSequentialGroup()
-                .addGroup(addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addCrsPaneLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)))
-                    .addComponent(addCrsRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(addCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addCrsPaneLayout.createSequentialGroup()
@@ -439,7 +424,7 @@ public class crssGui extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addCrsRmList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
+                        .addComponent(addCrsBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -461,17 +446,11 @@ public class crssGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setText("Course List");
-
-        addRmCrsBtn.setText("Add Course to Room");
-
         jLabel18.setText("Room List");
 
         addRmList.setColumns(20);
         addRmList.setRows(5);
         jScrollPane3.setViewportView(addRmList);
-
-        addRmCrsList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout addRmPaneLayout = new javax.swing.GroupLayout(addRmPane);
         addRmPane.setLayout(addRmPaneLayout);
@@ -479,14 +458,11 @@ public class crssGui extends javax.swing.JFrame {
             addRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addRmPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(addRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(addRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel17)
-                    .addComponent(addRmCrsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addRmNum, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addRmBtn)
-                    .addComponent(addRmCrsList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(addRmBtn))
+                .addGap(39, 39, 39)
                 .addGroup(addRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addRmPaneLayout.createSequentialGroup()
                         .addComponent(jLabel18)
@@ -508,14 +484,8 @@ public class crssGui extends javax.swing.JFrame {
                         .addComponent(addRmNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(addRmBtn)
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addRmCrsList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addRmCrsBtn)
-                        .addGap(0, 96, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -602,16 +572,14 @@ public class crssGui extends javax.swing.JFrame {
 
         delStuffPane.setLayout(new java.awt.CardLayout());
 
-        jLabel8.setText("Student List");
-
-        delStuList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane8.setViewportView(delStuList);
+        jLabel8.setText("Student That Can Be Deleted");
 
         delStuBtn.setText("Delete Student");
+        delStuBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                delStuBtnMousePressed(evt);
+            }
+        });
         delStuBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 delStuBtnActionPerformed(evt);
@@ -620,6 +588,15 @@ public class crssGui extends javax.swing.JFrame {
 
         delStuOutputBtn.setText("Output List to Text File");
 
+        delStuList.setEditable(false);
+        delStuList.setColumns(20);
+        delStuList.setRows(5);
+        jScrollPane4.setViewportView(delStuList);
+
+        delStuDropList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "None" }));
+
+        jLabel17.setText("Students");
+
         javax.swing.GroupLayout delStuPaneLayout = new javax.swing.GroupLayout(delStuPane);
         delStuPane.setLayout(delStuPaneLayout);
         delStuPaneLayout.setHorizontalGroup(
@@ -627,44 +604,61 @@ public class crssGui extends javax.swing.JFrame {
             .addGroup(delStuPaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(delStuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(delStuPaneLayout.createSequentialGroup()
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(delStuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(delStuOutputBtn)
-                            .addComponent(delStuBtn)))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGroup(delStuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(delStuPaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(delStuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(delStuOutputBtn)
+                            .addComponent(delStuBtn))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, delStuPaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(delStuDropList, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         delStuPaneLayout.setVerticalGroup(
             delStuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delStuPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(delStuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(delStuPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(delStuPaneLayout.createSequentialGroup()
+                        .addComponent(delStuDropList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(delStuBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(delStuOutputBtn))
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         delStuffPane.add(delStuPane, "card2");
 
-        jLabel9.setText("Course List");
-
-        delCrsList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane9.setViewportView(delCrsList);
+        jLabel9.setText("Course That Can Be Deleted");
 
         delCrsBtn.setText("Delete Course");
+        delCrsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                delCrsBtnMousePressed(evt);
+            }
+        });
 
         delCrsOutputBtn.setText("Output List to Text File");
+
+        delCrsList.setEditable(false);
+        delCrsList.setColumns(20);
+        delCrsList.setRows(5);
+        jScrollPane5.setViewportView(delCrsList);
+
+        jLabel25.setText("Course List");
+
+        delCrsDropList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "None" }));
 
         javax.swing.GroupLayout delCrsPaneLayout = new javax.swing.GroupLayout(delCrsPane);
         delCrsPane.setLayout(delCrsPaneLayout);
@@ -673,44 +667,67 @@ public class crssGui extends javax.swing.JFrame {
             .addGroup(delCrsPaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(delCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addGroup(delCrsPaneLayout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(delCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(delCrsOutputBtn)
-                            .addComponent(delCrsBtn))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(delCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(delCrsOutputBtn)
+                    .addGroup(delCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(delCrsDropList, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(delCrsBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         delCrsPaneLayout.setVerticalGroup(
             delCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delCrsPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
+                .addGroup(delCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(delCrsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                     .addGroup(delCrsPaneLayout.createSequentialGroup()
+                        .addComponent(delCrsDropList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
                         .addComponent(delCrsBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(delCrsOutputBtn)))
+                        .addComponent(delCrsOutputBtn))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         delStuffPane.add(delCrsPane, "card3");
 
-        jLabel10.setText("Room List");
-
-        delRmList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane10.setViewportView(delRmList);
+        jLabel10.setText("Rooms That Can Be Deleted");
 
         delRmBtn.setText("Delete Room");
+        delRmBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                delRmBtnMousePressed(evt);
+            }
+        });
+        delRmBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delRmBtnActionPerformed(evt);
+            }
+        });
 
         delRmOutputBtn.setText("Output List to Text File");
+
+        delRmList.setEditable(false);
+        delRmList.setColumns(20);
+        delRmList.setRows(5);
+        jScrollPane6.setViewportView(delRmList);
+
+        jLabel26.setText("Room List");
+
+        delRmDropList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "None" }));
+        delRmDropList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delRmDropListActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout delRmPaneLayout = new javax.swing.GroupLayout(delRmPane);
         delRmPane.setLayout(delRmPaneLayout);
@@ -719,27 +736,34 @@ public class crssGui extends javax.swing.JFrame {
             .addGroup(delRmPaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addGroup(delRmPaneLayout.createSequentialGroup()
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(delRmBtn)
-                            .addComponent(delRmOutputBtn))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(delRmOutputBtn))
+                    .addGroup(delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(delRmDropList, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(delRmBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         delRmPaneLayout.setVerticalGroup(
             delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delRmPaneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10)
+                .addGroup(delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel26))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(delRmPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
                     .addGroup(delRmPaneLayout.createSequentialGroup()
+                        .addComponent(delRmDropList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(delRmBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(delRmOutputBtn)))
+                        .addComponent(delRmOutputBtn))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -808,55 +832,6 @@ public class crssGui extends javax.swing.JFrame {
         });
 
         dsplySelectMenu.setLayout(new java.awt.CardLayout());
-
-        jLabel11.setText("First Name");
-
-        jLabel12.setText("Last Name");
-
-        jLabel13.setText("Phone Number");
-
-        dsplyStuEnter.setText("Enter");
-
-        javax.swing.GroupLayout stuDisplayLayout = new javax.swing.GroupLayout(stuDisplay);
-        stuDisplay.setLayout(stuDisplayLayout);
-        stuDisplayLayout.setHorizontalGroup(
-            stuDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(stuDisplayLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(stuDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11)
-                    .addComponent(dsplyFirstName)
-                    .addComponent(jLabel12)
-                    .addComponent(dsplyLastName)
-                    .addComponent(jLabel13)
-                    .addComponent(dsplyPhoneNum, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(dsplyStuEnter)
-                .addContainerGap())
-        );
-        stuDisplayLayout.setVerticalGroup(
-            stuDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(stuDisplayLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dsplyFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dsplyLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dsplyPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, stuDisplayLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(dsplyStuEnter)
-                .addContainerGap())
-        );
-
-        dsplySelectMenu.add(stuDisplay, "card2");
 
         jLabel14.setText("Room Number");
 
@@ -928,18 +903,56 @@ public class crssGui extends javax.swing.JFrame {
 
         dsplySelectMenu.add(crseDisplay, "card4");
 
-        dsplyListPane.setLayout(new java.awt.CardLayout());
+        jLabel11.setText("Please Choose a Student");
 
-        dsplyStuList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "None" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
         });
-        jScrollPane11.setViewportView(dsplyStuList);
+
+        dsplyStuBtn2.setText("Enter");
+
+        javax.swing.GroupLayout stuDisplayLayout = new javax.swing.GroupLayout(stuDisplay);
+        stuDisplay.setLayout(stuDisplayLayout);
+        stuDisplayLayout.setHorizontalGroup(
+            stuDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(stuDisplayLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(stuDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(stuDisplayLayout.createSequentialGroup()
+                        .addGroup(stuDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(dsplyStuBtn2))
+                        .addGap(0, 110, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        stuDisplayLayout.setVerticalGroup(
+            stuDisplayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(stuDisplayLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dsplyStuBtn2)
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        dsplySelectMenu.add(stuDisplay, "card4");
+
+        dsplyListPane.setLayout(new java.awt.CardLayout());
 
         dsplyStuOutputBtn.setText("Output list to text file");
 
-        jLabel21.setText("Student List");
+        jLabel21.setText("Students Schedule");
+
+        dsplyStuList.setEditable(false);
+        dsplyStuList.setColumns(20);
+        dsplyStuList.setRows(5);
+        jScrollPane7.setViewportView(dsplyStuList);
 
         javax.swing.GroupLayout dsplyStuListPaneLayout = new javax.swing.GroupLayout(dsplyStuListPane);
         dsplyStuListPane.setLayout(dsplyStuListPaneLayout);
@@ -948,9 +961,9 @@ public class crssGui extends javax.swing.JFrame {
             .addGroup(dsplyStuListPaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(dsplyStuListPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane11)
+                    .addComponent(jScrollPane7)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dsplyStuListPaneLayout.createSequentialGroup()
-                        .addGap(0, 59, Short.MAX_VALUE)
+                        .addGap(0, 57, Short.MAX_VALUE)
                         .addComponent(dsplyStuOutputBtn))
                     .addGroup(dsplyStuListPaneLayout.createSequentialGroup()
                         .addComponent(jLabel21)
@@ -962,7 +975,7 @@ public class crssGui extends javax.swing.JFrame {
             .addGroup(dsplyStuListPaneLayout.createSequentialGroup()
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dsplyStuOutputBtn)
                 .addContainerGap())
@@ -1145,6 +1158,7 @@ public class crssGui extends javax.swing.JFrame {
         dsplyPane.setVisible(false);
         initPanel.setVisible(false);
         delStuPane.setVisible(false);
+        delStuffPane.setVisible(false);
     }//GEN-LAST:event_delBtnMousePressed
 
     private void dsplyBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dsplyBtnMousePressed
@@ -1210,6 +1224,16 @@ public class crssGui extends javax.swing.JFrame {
         delStuPane.setVisible(true);
         delRmPane.setVisible(false);
         delCrsPane.setVisible(false);
+        delStuffPane.setVisible(true);
+        
+        for (Student s : stud) {
+            if (s.empty()){
+                delStuList.append("First Name: " + s.getFirst() + "\tLast Name: " + s.getLast() +
+                        "\tPhone Number: " + s.getPhone() + "\n");
+                delStuDropList.addItem("First Name: " + s.getFirst() + "\tLast Name: " + s.getLast() +
+                        "\tPhone Number: " + s.getPhone() +"\n");
+            }
+        }
     }//GEN-LAST:event_delStuMousePressed
 
     private void delCrsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delCrsMousePressed
@@ -1217,6 +1241,21 @@ public class crssGui extends javax.swing.JFrame {
         delStuPane.setVisible(false);
         delRmPane.setVisible(false);
         delCrsPane.setVisible(true);
+        delStuffPane.setVisible(true);
+        
+        for (Course c : crs) {
+            if (c.empty()) {
+                
+            String extra = ":00pm";
+            if (c.getCtm() > 8 && c.getCtm() < 12) {
+                extra = ":00am";
+            }
+                delCrsList.append("Course Name: " + c.getCName() + "Course Time: " 
+                        + c.getCtm() + extra + "Room: " + c.getCrm().getNum() + "\n");
+                delCrsDropList.addItem("Course Name: " + c.getCName() + "\n");
+            }
+        }
+
     }//GEN-LAST:event_delCrsMousePressed
 
     private void delRmMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delRmMousePressed
@@ -1224,6 +1263,15 @@ public class crssGui extends javax.swing.JFrame {
         delStuPane.setVisible(false);
         delRmPane.setVisible(true);
         delCrsPane.setVisible(false);
+        delStuffPane.setVisible(true);
+        
+        for (Room r : rm) {
+            if (r.empty()) {
+                delRmList.append("Room Number: " + r.getNum() + "\n");
+                delRmDropList.addItem("Room Number: " + r.getNum() + "\n");
+            }
+        }
+
     }//GEN-LAST:event_delRmMousePressed
 
     private void mainMenuBtn3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainMenuBtn3MousePressed
@@ -1328,21 +1376,26 @@ public class crssGui extends javax.swing.JFrame {
         addStuList.repaint();
     }//GEN-LAST:event_addStuBtnMousePressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addCrsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCrsBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addCrsBtnActionPerformed
 
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+    private void addCrsBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCrsBtnMousePressed
         // TODO add your handling code here:
         // vars
         String crsName = "";
         boolean isThere = false;
-        boolean isGood = false;
+        boolean isGood = true;
         boolean isFree = false;
         int crsTime = 0;
         Room room = null;
         
         crsName = addCrsName.getText();
+        
+        if (crsName.length() == 0) {
+            JOptionPane.showMessageDialog(this, "Course needs a name");
+            isGood = false;
+        }
         
         for (Course crs : crs) {
             if (crsName == crs.getCName()) {
@@ -1350,9 +1403,20 @@ public class crssGui extends javax.swing.JFrame {
                 break;
             }
             else {
-                isGood = true;
+                isGood = false;
             }
         }
+        
+                
+        if (addCrsRmList.getSelectedIndex() != 0) {
+            room = rm.get(addCrsRmList.getSelectedIndex() - 1);
+            isGood = true;
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "Need to select a room");
+            isGood = false;
+        }
+        
         switch (addCrsTime.getSelectedIndex()) {
             case 0:
                 JOptionPane.showMessageDialog(this, "Need to select a time");
@@ -1384,35 +1448,23 @@ public class crssGui extends javax.swing.JFrame {
             case 9:
                 crsTime = 5;
                 break;
+            default:
+                crsTime = 9;
+                break;
         }
-        for (Room r : rm) {
-            if (!r.getCourse().isEmpty()) {
-                ArrayList<Course> c = r.getCourse();
-                for (Course crs : c) {
-                    if (crs.getCtm() == crsTime) {
-                        JOptionPane.showMessageDialog(this, "Time is already taken");
-                        isGood = false;
-                    }
-                    else {
-                        isGood = true;
-                    }
-                }
-            }
-        }
-        
-        Room roomSelect = (Room) addCrsRmList.getSelectedItem();
-        for (Room i : rm) {
-            if (isFree == true) {
-                if (addCrsRmList.getSelectedIndex() != 0) {
-                    room = rm.get(addCrsRmList.getSelectedIndex() - 1);
-                    isGood = true;
-                }
-                else {
-                    JOptionPane.showMessageDialog(this, "Need to select a room");
+        if (!room.empty()) {
+            ArrayList<Course> c = room.getCourse();
+            
+            for (Course i : c) {
+                if (i.getCtm() == crsTime) {
+                    JOptionPane.showMessageDialog(this, "Room time conflict");
                     isGood = false;
+                    return;
                 }
             }
         }
+
+   
         
         // checking if student added to course
         if (studInCrs.isEmpty()) {
@@ -1450,24 +1502,22 @@ public class crssGui extends javax.swing.JFrame {
         else {
             JOptionPane.showMessageDialog(this, "Didn't set something correctly");
         }
-        
+        addCrsList.setText("");
         for (Course c : crs) {
+            String extra = ":00pm";
+            if (c.getCtm() > 8 && c.getCtm() < 12) {
+                extra = ":00am";
+            }
             addCrsList.append("Course Name: " + c.getCName() + "\tCourse Time: "
-            + c.getCtm() + "\tRoom: " + c.getCrm().getNum() + "\n");
+            + c.getCtm() + extra + "\tRoom: " + c.getCrm().getNum() + "\n");
         }
         addCrsList.repaint();
-    }//GEN-LAST:event_jButton1MousePressed
+    }//GEN-LAST:event_addCrsBtnMousePressed
 
     private void addCrsStuBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCrsStuBtnMousePressed
         // TODO add your handling code here:
         Student stu;
-        Student select = (Student) addCrsStuList.getSelectedItem();
         int index = addCrsStuList.getSelectedIndex();
-        
-        for (Student i : stud) {
-            addCrsStuList.addItem("First Name: " + i.getFirst() + "\tLast Name: "
-            + i.getLast() + "\tPhone Number: " + i.getPhone() + "\n");
-        }
         
         studInCrs.add(stud.get(index - 1));
     }//GEN-LAST:event_addCrsStuBtnMousePressed
@@ -1478,6 +1528,7 @@ public class crssGui extends javax.swing.JFrame {
         boolean isGood = true;
         rmNum = Integer.parseInt(addRmNum.getText());
         
+        // if room already exists
         if (!rm.isEmpty()) {
             for (Room i : rm) {
                 if (rmNum == i.getNum()) {
@@ -1488,10 +1539,12 @@ public class crssGui extends javax.swing.JFrame {
             }
         }
         
+        // if good add the room
         if (isGood) {
             rm.add(new Room(rmNum));
         }
         
+        // set the list
         addRmNum.setText("");
         for (Room r : rm) {
             addRmList.append("Room Number: " + r.getNum() + "\n");
@@ -1499,17 +1552,105 @@ public class crssGui extends javax.swing.JFrame {
         addRmList.repaint();
     }//GEN-LAST:event_addRmBtnMousePressed
 
-    private void addCrsRefreshMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCrsRefreshMousePressed
+    private void delStuBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delStuBtnMousePressed
         // TODO add your handling code here:
-        for (Student i : stud) {
-            addCrsStuList.addItem("First Name: " + i.getFirst() + "\tLast Name: "
-            + i.getLast() + "\tPhone Number: " + i.getPhone() + "\n");
+        Student s;
+        
+        // if the selected item is the same first and last name remove
+        if (delStuDropList.getSelectedIndex() != 0) {
+            s = stud.get(delStuDropList.getSelectedIndex() - 1);
+            for (Student i : stud) {
+                if (s.getFirst() == i.getFirst() && s.getLast() == i.getLast())
+                    stud.remove(i);
+            }
         }
         
-        for (Room r : rm) {
-            addCrsRmList.addItem("Room Num: " + r.getNum() + "\n");
+        // formatting
+        delStuList.setText("");
+        delStuDropList.removeAllItems();
+        delStuDropList.addItem("None");
+        
+        // redo the list
+        for (Student i : stud) {
+            
+            delStuList.append("First Name: " + i.getFirst() + "\tLast Name: "
+            + i.getLast() + "\tPhone Number: " + i.getPhone() + "\n");
+            delStuDropList.addItem("First Name: " + i.getFirst() + "\tLast Name: "
+            + i.getLast() + "\tPhone Number: " + i.getPhone() + "\n");
         }
-    }//GEN-LAST:event_addCrsRefreshMousePressed
+        delStuList.repaint();
+    }//GEN-LAST:event_delStuBtnMousePressed
+
+    private void delCrsBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delCrsBtnMousePressed
+        // TODO add your handling code here:
+        Course cr;
+        
+        // if course name then deleted
+        if (delCrsDropList.getSelectedIndex() != 0) {
+            cr = crs.get(delCrsDropList.getSelectedIndex() - 1);
+            for (Course i : crs) {
+                if (i.getCName() == cr.getCName())
+                    crs.remove(i);
+            }
+        }
+        
+        // formatting
+        delCrsList.setText("");
+        delCrsDropList.removeAllItems();
+        delCrsDropList.addItem("None");
+        
+        // redo the list
+        for (Course c : crs) {
+                
+            String extra = ":00pm";
+            if (c.getCtm() > 8 && c.getCtm() < 12) {
+                extra = ":00am";
+            }
+            delCrsList.append("Course Name: " + c.getCName() + "Course Time: " 
+                    + c.getCtm() + extra + "Room: " + c.getCrm().getNum() + "\n");
+            delCrsDropList.addItem("Course Name: " + c.getCName() + "\n");
+        }
+        delCrsList.repaint();
+    }//GEN-LAST:event_delCrsBtnMousePressed
+
+    private void delRmDropListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delRmDropListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delRmDropListActionPerformed
+
+    private void delRmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delRmBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delRmBtnActionPerformed
+
+    private void delRmBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delRmBtnMousePressed
+        // TODO add your handling code here:
+        Room r;
+        
+        // if room num is selected remove it
+        if (delRmDropList.getSelectedIndex() != 0) {
+            r = rm.get(delRmDropList.getSelectedIndex() - 1);
+            
+            for (Room ro : rm) {
+                if (ro.getNum() == r.getNum())
+                    rm.remove(ro);
+            }
+        }
+        
+        // formatting
+        delRmList.setText("");
+        delRmDropList.removeAllItems();
+        delRmDropList.addItem("None");
+        
+        // redo the list
+        for (Room i : rm) {
+            delRmList.append("Room Number: " + i.getNum() + "\n");
+            delRmDropList.addItem("Room Number: " + i.getNum() + "\n");
+        }
+        delRmList.repaint();
+    }//GEN-LAST:event_delRmBtnMousePressed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1549,10 +1690,10 @@ public class crssGui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JButton addCrs;
+    private javax.swing.JButton addCrsBtn;
     private javax.swing.JTextArea addCrsList;
     private javax.swing.JTextField addCrsName;
     private javax.swing.JPanel addCrsPane;
-    private javax.swing.JToggleButton addCrsRefresh;
     private javax.swing.JComboBox<String> addCrsRmList;
     private javax.swing.JButton addCrsStuBtn;
     private javax.swing.JComboBox<String> addCrsStuList;
@@ -1560,8 +1701,6 @@ public class crssGui extends javax.swing.JFrame {
     private javax.swing.JPanel addPanel;
     private javax.swing.JButton addRm;
     private javax.swing.JButton addRmBtn;
-    private javax.swing.JButton addRmCrsBtn;
-    private javax.swing.JComboBox addRmCrsList;
     private javax.swing.JTextArea addRmList;
     private javax.swing.JTextField addRmNum;
     private javax.swing.JPanel addRmPane;
@@ -1578,18 +1717,21 @@ public class crssGui extends javax.swing.JFrame {
     private javax.swing.JButton delBtn;
     private javax.swing.JButton delCrs;
     private javax.swing.JButton delCrsBtn;
-    private javax.swing.JList<String> delCrsList;
+    private javax.swing.JComboBox delCrsDropList;
+    private javax.swing.JTextArea delCrsList;
     private javax.swing.JButton delCrsOutputBtn;
     private javax.swing.JPanel delCrsPane;
     private javax.swing.JPanel delPanel;
     private javax.swing.JButton delRm;
     private javax.swing.JButton delRmBtn;
-    private javax.swing.JList<String> delRmList;
+    private javax.swing.JComboBox delRmDropList;
+    private javax.swing.JTextArea delRmList;
     private javax.swing.JButton delRmOutputBtn;
     private javax.swing.JPanel delRmPane;
     private javax.swing.JButton delStu;
     private javax.swing.JButton delStuBtn;
-    private javax.swing.JList<String> delStuList;
+    private javax.swing.JComboBox delStuDropList;
+    private javax.swing.JTextArea delStuList;
     private javax.swing.JButton delStuOutputBtn;
     private javax.swing.JPanel delStuPane;
     private javax.swing.JLayeredPane delStuffPane;
@@ -1600,11 +1742,8 @@ public class crssGui extends javax.swing.JFrame {
     private javax.swing.JList<String> dsplyCrseList;
     private javax.swing.JTextField dsplyCrseName;
     private javax.swing.JComboBox<String> dsplyCrseTime;
-    private javax.swing.JTextField dsplyFirstName;
-    private javax.swing.JTextField dsplyLastName;
     private javax.swing.JLayeredPane dsplyListPane;
     private javax.swing.JPanel dsplyPane;
-    private javax.swing.JTextField dsplyPhoneNum;
     private javax.swing.JButton dsplyRmBtn;
     private javax.swing.JButton dsplyRmEnter;
     private javax.swing.JList<String> dsplyRmList;
@@ -1613,18 +1752,16 @@ public class crssGui extends javax.swing.JFrame {
     private javax.swing.JButton dsplyRmOutputBtn;
     private javax.swing.JLayeredPane dsplySelectMenu;
     private javax.swing.JButton dsplyStuBtn;
-    private javax.swing.JButton dsplyStuEnter;
-    private javax.swing.JList<String> dsplyStuList;
+    private javax.swing.JButton dsplyStuBtn2;
+    private javax.swing.JTextArea dsplyStuList;
     private javax.swing.JPanel dsplyStuListPane;
     private javax.swing.JButton dsplyStuOutputBtn;
     private javax.swing.JPanel initPanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1637,6 +1774,8 @@ public class crssGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1645,14 +1784,14 @@ public class crssGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JButton mainMenuBtn1;
     private javax.swing.JButton mainMenuBtn2;
     private javax.swing.JButton mainMenuBtn3;

@@ -358,11 +358,11 @@ public class CRSS
             // show students with no courses
             System.out.println("Students that can be deleted: ");
             for (Student i : stud) {
-                if ( i.isEmpty() ) {
+                if ( i.empty() ) {
                     System.out.println(i.getFirst() + i.getLast());
                     canDel = true;
                 }
-                else if ( !i.isEmpty() )
+                else if ( !i.empty() )
                     System.out.println("Nothing to be deleted.");
             }
             
@@ -375,7 +375,7 @@ public class CRSS
                 String studentL = input.next();
 
                 for (Student i : stud) {
-                    if ( i.isEmpty() ) {
+                    if ( i.empty() ) {
                         if (studentF.equals(i.getFirst()) && studentL.equals(i.getLast())) {
                             stud.remove(i);
                             break;

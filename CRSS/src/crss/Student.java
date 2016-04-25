@@ -51,7 +51,7 @@ public class Student {
     public void addCourse(Course crs) {
         course.add(crs);
     }
-    public boolean isEmpty() {
+    public boolean empty() {
         if (this.course.isEmpty())
             return true;
         else

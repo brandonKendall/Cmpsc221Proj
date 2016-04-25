@@ -6,7 +6,6 @@ public class Course {
     // instance vars
     private String crsName;
     private int crsTm;
-    private int rm;
     // these are for storing the instance of students in the course
     private Student student;
     private ArrayList<Student> stud = new ArrayList<>();
@@ -15,13 +14,13 @@ public class Course {
     public Course() {}
     
     // class constructor
-    public Course(String crsName, int crsTime, Room room) {
+    public Course(String crsName, int crsTm, Room room) {
         this.crsName = crsName;
         this.crsTm = crsTm;
         this.room = room;
     }
 
-    public Course(String crsName, int crsTime, Room room, ArrayList<Student> stud) {
+    public Course(String crsName, int crsTm, Room room, ArrayList<Student> stud) {
         this.crsName = crsName;
         this.crsTm = crsTm;
         this.room = room;
@@ -34,14 +33,9 @@ public class Course {
     }
     
     public void setCTm(int crsTm) {
-        if (crsTm > 9.00 && crsTm < 17.00) {
             this.crsTm = crsTm;
-        }
     }
     
-    public void setCrm(int rm) {
-        this.rm = rm;
-    }
     
     public void setStu(Student student) {
         this.student = student;
@@ -52,22 +46,22 @@ public class Course {
         return this.stud;
     }
     public String getCName() {
-        return crsName;
+        return this.crsName;
     }
     
     public int getCtm() {
-        return crsTm;
+        return this.crsTm;
     }
     
     public Room getCrm() {
-        return room;
+        return this.room;
     }
     
     public Student getStu() {
-        return student;
+        return this.student;
     }
 
-    public boolean isEmpty() {
+    public boolean empty() {
         if (this.stud.isEmpty())
             return true;
         else 
