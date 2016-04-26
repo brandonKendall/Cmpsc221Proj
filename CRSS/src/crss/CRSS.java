@@ -465,7 +465,7 @@ public class CRSS
                     while (true) {
                         System.out.println("Displaying current students: ");
                         for (Student i : stud) {
-                            if (i.isEmpty() == false)
+                            if (i.empty() == false)
                                 System.out.println(i.getFirst() + " " + i.getLast() + " " + i.getPhone());
                             else {
                                 System.out.println("There are no current registered students");
